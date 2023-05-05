@@ -12,4 +12,3 @@ def handle_signal_product_created(instance, created, **kwargs):
         information_about_order = Main.objects.get(id = instance.id)
         product = Product.objects.get(id=information_about_order.product.id)
         send_message(information_about_order.gmail, product)
-        print(information_about_order.gmail)

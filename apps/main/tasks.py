@@ -6,8 +6,8 @@ from core.celery import app
 @app.task
 def send_message(gmail, instance):
     try:
-        send_mail('Bought a new product!', 
-                f'User-gmail: {gmail} \nProduct title: {instance.title} \nProduct price: {instance.price}', 
+        send_mail('New order!', 
+                f'User-name: {instance.name} \nUser-gmail: {gmail} \nProduct title: {instance.title} \nProduct price: {instance.price}', 
                 'ssavutokhunov@gmail.com',
                 ['ssavutokhunov@gmail.com'], 
                 fail_silently=False)

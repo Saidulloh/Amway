@@ -10,6 +10,10 @@ class Product(models.Model):
         max_length=256,
         verbose_name='title'
     )
+    image = models.ImageField(
+        upload_to='product_images/',
+        verbose_name='image'
+    )
     price = models.PositiveSmallIntegerField(
         default=0, 
         validators=[MinValueValidator(0)],

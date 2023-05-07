@@ -33,6 +33,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 LOCAL_APPS = [
     'apps.main',
     'apps.products',
+    'apps.reviews',
 ]
 
 REQUIREMENTS = [

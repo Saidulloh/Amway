@@ -13,6 +13,7 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'title',
+            'image',
             'product_data'
         )
 

@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
+from apps.categories.models import Category
+
 
 class Product(models.Model):
     """
@@ -13,6 +15,14 @@ class Product(models.Model):
     image = models.ImageField(
         upload_to='product_images/',
         verbose_name='image'
+    )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        related_name='category',
+        verbose_name='category',
+        null=True,
+        blank=True
     )
     price = models.PositiveSmallIntegerField(
         default=0, 

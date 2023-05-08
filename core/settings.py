@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 LOCAL_APPS = [
+    'apps.categories',
     'apps.main',
     'apps.products',
     'apps.reviews',

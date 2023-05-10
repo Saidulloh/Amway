@@ -7,7 +7,7 @@ from core.celery import app
 def send_message(information, instance):
     try:
         send_mail('New order!', 
-                f'User-name: {information.name} \nUser-gmail: {information.gmail} \nProduct title: {instance.title} \nProduct price: {instance.price}', 
+                f'ФИО: {information.name} \nНомер телефона: {instance.phone_number}\nПочта: {information.gmail} \nКомментарий: {instance.comment} \nНазвание продукта: {instance.title} \nЦена продукта: {instance.price}', 
                 'ssavutokhunov@gmail.com',
                 ['sattarzhanovdev@gmail.com'], 
                 fail_silently=False)
@@ -19,7 +19,7 @@ def send_message(information, instance):
 def send_message_about_consultation(instance):
     try:
         send_mail('New person for consultation!', 
-                f'User-name: {instance.name} \nUser-gmail: {instance.gmail} \Phone number: {instance.phone_number} \nDate time: {instance.created_at}', 
+                f'ФИО: {instance.name} \nНомер телефона: {instance.phone_number} \nПочта: {instance.gmail}', 
                 'ssavutokhunov@gmail.com',
                 ['sattarzanov@gmail.com'], 
                 fail_silently=False)
